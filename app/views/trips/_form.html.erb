@@ -1,4 +1,4 @@
-<%= form_for(@trip) do |f| %>
+<%= form_for(@trip, html: { class: 'form-horizontal' } ) do |f| %>
   <% if @trip.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
@@ -11,27 +11,56 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :post %><br />
-    <%= f.text_area :post %>
+  <div class="control-group">
+    <%= f.label :post,
+                class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :post %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :lat %><br />
-    <%= f.text_field :lat %>
+
+  <div class="control-group">
+    <%= f.label :lat,
+                class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lat %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :lon %><br />
-    <%= f.text_field :lon %>
+
+  <div class="control-group">
+    <%= f.label :lon,
+                class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lon %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
+
+  <div class="control-group">
+    <%= f.label :date,
+                class: 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :date %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
+
+  <div class="control-group">
+    <%= f.label :city,
+                class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :city %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="control-group">
+    <%= f.label :user_id,
+                class: 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :user_id, @users, :id, :name %>
+      <%= link_to "Create User", new_user_path, class: "btn btn-danger" %>
+  </div>
+</div>
+
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

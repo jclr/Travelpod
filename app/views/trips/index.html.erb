@@ -14,6 +14,7 @@
 
 <% @trips.each do |trip| %>
   <tr>
+    <td><%= trip.user.name %></td>
     <td><%= trip.post %></td>
     <td><%= trip.lat %></td>
     <td><%= trip.lon %></td>

@@ -25,6 +25,7 @@ class TripsController < ApplicationController
   # GET /trips/new.json
   def new
     @trip = Trip.new
+    @Users = User.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,7 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(params[:trip])
+    @users = User.all
 
     respond_to do |format|
       if @trip.save
