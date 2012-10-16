@@ -55,7 +55,8 @@
     <%= f.label :user_id,
                 class: 'control-label' %>
     <div class="controls">
-      <%= f.text_field :user_id %>
+      <%= f.collection_select :user_id, @users, :id, :name %>
+      <%= link_to "Create User", new_user_path, class: "btn btn-danger" %>
     </div>
   </div>
 
