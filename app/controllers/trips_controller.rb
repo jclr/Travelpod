@@ -25,7 +25,7 @@ class TripsController < ApplicationController
   # GET /trips/new.json
   def new
     @trip = Trip.new
-    @Users = User.all
+    @users = User.all
 
     respond_to do |format|
       format.html # new.html.erb
