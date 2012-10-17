@@ -26,6 +26,7 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @users = User.all
+    @cities = City.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +44,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(params[:trip])
     @users = User.all
+    @cities = City.all
 
     respond_to do |format|
       if @trip.save

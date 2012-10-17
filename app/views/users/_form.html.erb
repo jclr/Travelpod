@@ -19,14 +19,16 @@
     <%= f.label :password %><br />
     <%= f.text_field :password %>
   </div>
-  <div class="field">
-    <%= f.label :lat %><br />
-    <%= f.text_field :lat %>
+
+  <div class="control-group">
+    <%= f.label :city_id,
+                class: 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :city_id, @cities, :id, :name %>
+      <%= link_to "Create City", new_city_path, class: "btn btn-danger" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :lon %><br />
-    <%= f.text_field :lon %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
