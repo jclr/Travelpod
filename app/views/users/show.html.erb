@@ -11,15 +11,9 @@
 </p>
 
 <p>
-  <b>Lat:</b>
-  <%= @user.lat %>
+    <b>City:</b>
+    <%= @user.city_name %>
 </p>
-
-<p>
-  <b>Lon:</b>
-  <%= @user.lon %>
-</p>
-
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
