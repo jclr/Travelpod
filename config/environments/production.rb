@@ -23,6 +23,8 @@ Travelpod::Application.configure do
   # Show stack trace on production
   config.consider_all_requests_local       = true
 
+  config.action_mailer.default_url_options = { :host => 'travelpod.herokuapp.com' }
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

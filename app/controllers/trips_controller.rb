@@ -1,4 +1,7 @@
 class TripsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /trips
   # GET /trips.json
   def index
