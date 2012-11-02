@@ -1,6 +1,10 @@
 class TripsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :get_user_trips
+
+  def get_user_trips
+    @user_trips = Trip.current_user_trips(current_user)
+  end
 
   # GET /trips
   # GET /trips.json
@@ -29,7 +33,6 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @users = User.all
-    @cities = City.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,8 +49,7 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(params[:trip])
-    @users = User.all
-    @cities = City.all
+    @trip.user_id = current_user.id
 
     respond_to do |format|
       if @trip.save

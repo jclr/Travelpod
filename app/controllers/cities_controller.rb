@@ -1,7 +1,5 @@
 class CitiesController < ApplicationController
 
-  before_filter :authenticate_user!
-
   # GET /cities
   # GET /cities.json
   def index

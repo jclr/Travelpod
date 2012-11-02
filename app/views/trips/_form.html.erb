@@ -36,15 +36,6 @@
     </div>
   </div>
 
-  <div class="control-group">
-    <%= f.label :user_id,
-                class: 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :user_id, @users, :id, :name %>
-      <%= link_to "Create User", new_user_path, class: "btn btn-danger" %>
-    </div>
-  </div>
-
   <div class="form-actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>

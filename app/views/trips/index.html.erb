@@ -18,8 +18,11 @@
     <td><%= trip.date %></td>
     <td><%= trip.city_name %></td>
     <td><%= link_to 'Show', trip %></td>
+    <% user_trips = Trip.current_user_trips(current_user).all %>
+    <% if user_trips.include? trip %>
     <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
     <td><%= link_to 'Destroy', trip, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
