@@ -17,6 +17,6 @@
 $ (function () {
   var $message = $(".notice, .error");
   $message.click(function() {
-    $message.remove();
+    $message.fadeOut();
   });
 });
